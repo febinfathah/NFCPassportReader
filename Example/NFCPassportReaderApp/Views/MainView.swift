@@ -29,7 +29,7 @@ struct MainView : View {
     
     @State var bgColor = Color( UIColor.systemBackground )
     
-    private let passportReader = PassportReader()
+    private let passportReader = EMRTDTagReader()
 
     var body: some View {
         NavigationView {
