@@ -31,7 +31,7 @@ public enum NFCPassportReaderError: Error {
     case TagNotValid
     case ConnectionError
     case UserCanceled
-    case InvalidMRZKey
+    case AuthenticationFailed
     case MoreThanOneTagFound
     case InvalidHashAlgorithmSpecified
     case InvalidDataPassed(String)
@@ -39,31 +39,31 @@ public enum NFCPassportReaderError: Error {
 
     var value: String {
         switch self {
-            case .ResponseError(let errMsg, _, _): return errMsg
-            case .InvalidResponse: return "InvalidResponse"
-            case .UnexpectedError: return "UnexpectedError"
-            case .NFCNotSupported: return "NFCNotSupported"
-            case .NoConnectedTag: return "NoConnectedTag"
-            case .D087Malformed: return "D087Malformed"
-            case .InvalidResponseChecksum: return "InvalidResponseChecksum"
-            case .MissingMandatoryFields: return "MissingMandatoryFields"
-            case .CannotDecodeASN1Length: return "CannotDecodeASN1Length"
-            case .InvalidASN1Value: return "InvalidASN1Value"
-            case .UnableToProtectAPDU: return "UnableToProtectAPDU"
-            case .UnableToUnprotectAPDU: return "UnableToUnprotectAPDU"
-            case .UnsupportedDataGroup: return "UnsupportedDataGroup"
-            case .DataGroupNotRead: return "DataGroupNotRead"
-            case .UnknownTag: return "UnknownTag"
-            case .UnknownImageFormat: return "UnknownImageFormat"
-            case .NotImplemented: return "NotImplemented"
-            case .TagNotValid: return "TagNotValid"
-            case .ConnectionError: return "ConnectionError"
-            case .UserCanceled: return "UserCanceled"
-            case .InvalidMRZKey: return "InvalidMRZKey"
-            case .MoreThanOneTagFound: return "MoreThanOneTagFound"
-            case .InvalidHashAlgorithmSpecified: return "InvalidHashAlgorithmSpecified"
-            case .InvalidDataPassed(let reason) : return "Invalid data passed - \(reason)"
-            case .NotYetSupported(let reason) : return "Not yet supported - \(reason)"
+        case .ResponseError(let errMsg, _, _): return errMsg
+        case .InvalidResponse: return "InvalidResponse"
+        case .UnexpectedError: return "UnexpectedError"
+        case .NFCNotSupported: return "NFCNotSupported"
+        case .NoConnectedTag: return "NoConnectedTag"
+        case .D087Malformed: return "D087Malformed"
+        case .InvalidResponseChecksum: return "InvalidResponseChecksum"
+        case .MissingMandatoryFields: return "MissingMandatoryFields"
+        case .CannotDecodeASN1Length: return "CannotDecodeASN1Length"
+        case .InvalidASN1Value: return "InvalidASN1Value"
+        case .UnableToProtectAPDU: return "UnableToProtectAPDU"
+        case .UnableToUnprotectAPDU: return "UnableToUnprotectAPDU"
+        case .UnsupportedDataGroup: return "UnsupportedDataGroup"
+        case .DataGroupNotRead: return "DataGroupNotRead"
+        case .UnknownTag: return "UnknownTag"
+        case .UnknownImageFormat: return "UnknownImageFormat"
+        case .NotImplemented: return "NotImplemented"
+        case .TagNotValid: return "TagNotValid"
+        case .ConnectionError: return "ConnectionError"
+        case .UserCanceled: return "UserCanceled"
+        case .AuthenticationFailed: return "AuthenticationFailed"
+        case .MoreThanOneTagFound: return "MoreThanOneTagFound"
+        case .InvalidHashAlgorithmSpecified: return "InvalidHashAlgorithmSpecified"
+        case .InvalidDataPassed(let reason) : return "Invalid data passed - \(reason)"
+        case .NotYetSupported(let reason) : return "Not yet supported - \(reason)"
         }
     }
 }

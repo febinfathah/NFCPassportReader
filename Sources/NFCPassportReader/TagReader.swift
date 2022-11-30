@@ -346,7 +346,7 @@ public class TagReader {
                     Log.error( "Error reading tag: sw1 - 0x\(binToHexRep(sw1)), sw2 - 0x\(binToHexRep(sw2))" )
                     let tagError: NFCPassportReaderError
                     if (rep.sw1 == 0x63 && rep.sw2 == 0x00) {
-                        tagError = NFCPassportReaderError.InvalidMRZKey
+                        tagError = NFCPassportReaderError.AuthenticationFailed
                     } else {
                         let errorMsg = self.decodeError(sw1: rep.sw1, sw2: rep.sw2)
                         Log.error( "reason: \(errorMsg)" )
